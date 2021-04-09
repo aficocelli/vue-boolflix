@@ -40,7 +40,7 @@
       <!-- main -->
       <main>
         <div class="box" v-for="(movie, i) in movies" @mouseover="overlay(i)">
-          <img src="https://image.tmdb.org/t/p/w400/1J1e8Uslw8MAE7mIVFh6TU9mPt8.jpg" alt="" :class="movie.id == indexOf? 'invisible': 'active'">
+          <img :src="'https://image.tmdb.org/t/p/w500/' + movie.poster_path" alt="" :class="movie.id == indexOf? 'invisible': 'active'">
           <div :class="movie.id == indexOf? 'movie-info active': 'invisible'">
             <h2>title</h2>
             <h3>original title</h3>
