@@ -31,11 +31,11 @@ var app = new Vue ({
       })
       .then(function(response){
 
-        for(var i = 0; i < response.data.results.length; i++){
 
-          myThis.movies.push(response.data.results[i]);
 
-        }
+        myThis.movies = response.data.results;
+
+
 
       })
 

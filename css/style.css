@@ -47,11 +47,17 @@ main{
 .box img{
   height:100%;
   width:100%;
-  object-fit: cover;
 }
 .movie-info{
   background-color: #000;
   color:#fff;
   height:100%;
   padding: 30px 20px;
+  overflow: auto;
+}
+.movie-info span{
+  color:red;
+}
+.movie-info p{
+  font-size:14px;
 }

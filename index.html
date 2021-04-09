@@ -42,10 +42,10 @@
         <div class="box" v-for="(movie, i) in movies" @mouseover="overlay(i)">
           <img :src="'https://image.tmdb.org/t/p/w500/' + movie.poster_path" alt="" :class="movie.id == indexOf? 'invisible': 'active'">
           <div :class="movie.id == indexOf? 'movie-info active': 'invisible'">
-            <h2>{{movie.title}}</h2>
-            <h3>{{movie.original_title}}</h3>
-            <h4>{{movie.vote_average}}</h4>
-            <p>{{movie.overview}}</p>
+            <h2><span>Titolo: </span>{{movie.title}}</h2>
+            <h3><span>Titolo originale: </span>{{movie.original_title}}</h3>
+            <h4><span>Voto: </span>{{movie.vote_average}}</h4>
+            <p><span>Trama: </span>{{movie.overview}}</p>
           </div>
         </div>
 
