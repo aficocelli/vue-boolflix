@@ -14,6 +14,9 @@ var app = new Vue ({
       return this.indexOf = this.movies[i].id;
 
     },
+    resetOverlay:function(){
+      return this.indexOf = null;
+    },
     searchMovie: function(){
 
       let myThis = this;
