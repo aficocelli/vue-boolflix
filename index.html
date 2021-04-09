@@ -44,7 +44,7 @@
           <div :class="movie.id == indexOf? 'movie-info active': 'invisible'">
             <h2><span>Titolo: </span>{{movie.title}}</h2>
             <h3><span>Titolo originale: </span>{{movie.original_title}}</h3>
-            <h4><span>Voto: </span>{{movie.vote_average}}</h4>
+            <h4><span>Voto: </span><i class="fas fa-star colored-star" v-for="(n, index) in (parseInt(movie.vote_average / 2))"></i><i class="fas fa-star" v-for="(n,index) in ( 5 -(parseInt(movie.vote_average / 2)))"></i></h4>
             <p><span>Trama: </span>{{movie.overview}}</p>
           </div>
         </div>

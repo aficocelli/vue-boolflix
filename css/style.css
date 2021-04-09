@@ -29,6 +29,9 @@ main{
 .invisible{
   display:none;
 }
+.colored-star{
+  color:yellow;
+}
 /* /MIX */
 
 /* logo layout */
