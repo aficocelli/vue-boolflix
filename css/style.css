@@ -1,0 +1,26 @@
+/* MIX */
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+body{
+  font-family: 'Lato', sans-serif;
+}
+header{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  padding:20px;
+  background-color: #000;
+  height:10vh;
+}
+main{
+  height:90vh;
+  background-color: #828282;
+}
+/* /MIX */
+header h1{
+  color:red;
+  text-transform: uppercase;
+}
