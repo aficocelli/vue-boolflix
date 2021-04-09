@@ -3,20 +3,44 @@ var app = new Vue ({
   el: '#root',
 
   data:{
-    hover: false,
-
+    movies: [],
+    movieInput: "",
+    indexOf: null
   },
 
-  methods:{
-    mouseOver: function() {
-      return this.hover = true;
+  methods: {
+    overlay: function(i) {
+
+      return this.indexOf = this.movies[i].id;
+
     },
-    eventTest: function(){
+    searchMovie: function(){
 
-      alert("ciao")
+      let myThis = this;
+
+      axios.get('https://api.themoviedb.org/3/search/movie', {
+
+        params: {
+
+          api_key: '5c71d6d9a1c9e5778b11fdc5540b3ed2',
+          query: myThis.movieInput,
+          language: 'it-IT'
+
+        }
+
+      })
+      .then(function(response){
+
+        for(var i = 0; i < response.data.results.length; i++){
+
+          myThis.movies.push(response.data.results[i]);
+
+        }
+
+      })
+
     }
+
   }
-
-
 
 });

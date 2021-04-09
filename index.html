@@ -31,17 +31,17 @@
           <h1>boolflix</h1>
         </div>
         <div class="search">
-          <input type="text">
-          <button @click="eventTest"><i class="fas fa-search"></i></button>
+          <input type="text" v-model="movieInput">
+          <button @click="searchMovie"><i class="fas fa-search"></i></button>
         </div>
       </header>
       <!-- /header -->
 
       <!-- main -->
       <main>
-        <div class="box" @mouseOver="hover = true" @mouseLeave="hover = false" >
-          <img src="https://image.tmdb.org/t/p/w400/1J1e8Uslw8MAE7mIVFh6TU9mPt8.jpg" alt="" v-if="hover == false">
-          <div class="movie-info" v-if="hover">
+        <div class="box" v-for="(movie, i) in movies" @mouseover="overlay(i)">
+          <img src="https://image.tmdb.org/t/p/w400/1J1e8Uslw8MAE7mIVFh6TU9mPt8.jpg" alt="" :class="movie.id == indexOf? 'invisible': 'active'">
+          <div :class="movie.id == indexOf? 'movie-info active': 'invisible'">
             <h2>title</h2>
             <h3>original title</h3>
             <h4>voto</h4>

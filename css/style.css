@@ -23,6 +23,12 @@ main{
   flex-wrap:wrap;
   overflow-y: auto;
 }
+.active{
+  display:block;
+}
+.invisible{
+  display:none;
+}
 /* /MIX */
 
 /* logo layout */
@@ -35,10 +41,17 @@ main{
   height:400px;
   width:calc((100% / 5) - 20px);
   margin: 10px;
+  border:2px solid #fff;
 }
 
 .box img{
   height:100%;
   width:100%;
-  object-fit: contain;
+  object-fit: cover;
+}
+.movie-info{
+  background-color: #000;
+  color:#fff;
+  height:100%;
+  padding: 30px 20px;
 }
