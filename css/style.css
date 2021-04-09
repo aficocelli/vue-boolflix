@@ -18,9 +18,26 @@ header{
 main{
   height:90vh;
   background-color: #828282;
+  padding:20px;
+  display:flex;
+  flex-wrap:wrap;
+  overflow-y: auto;
 }
 /* /MIX */
-header h1{
+
+/* logo layout */
+.logo h1{
   color:red;
   text-transform: uppercase;
+}
+/* /logo layout */
+.box{
+
+  width:calc((100% / 5) - 20px);
+  margin: 10px;
+}
+.box img{
+  height:100%;
+  width:100%;
+  object-fit: contain;
 }
