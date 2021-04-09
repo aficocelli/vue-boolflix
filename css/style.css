@@ -32,10 +32,11 @@ main{
 }
 /* /logo layout */
 .box{
-
+  height:400px;
   width:calc((100% / 5) - 20px);
   margin: 10px;
 }
+
 .box img{
   height:100%;
   width:100%;

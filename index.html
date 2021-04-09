@@ -32,35 +32,23 @@
         </div>
         <div class="search">
           <input type="text">
-          <button><i class="fas fa-search"></i></button>
+          <button @click="eventTest"><i class="fas fa-search"></i></button>
         </div>
       </header>
       <!-- /header -->
 
       <!-- main -->
       <main>
-        <div class="box">
-          <img src="https://image.tmdb.org/t/p/w400/1J1e8Uslw8MAE7mIVFh6TU9mPt8.jpg" alt="">
+        <div class="box" @mouseOver="hover = true" @mouseLeave="hover = false" >
+          <img src="https://image.tmdb.org/t/p/w400/1J1e8Uslw8MAE7mIVFh6TU9mPt8.jpg" alt="" v-if="hover == false">
+          <div class="movie-info" v-if="hover">
+            <h2>title</h2>
+            <h3>original title</h3>
+            <h4>voto</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          </div>
         </div>
-        <div class="box">
-          <img src="https://image.tmdb.org/t/p/w400/1J1e8Uslw8MAE7mIVFh6TU9mPt8.jpg" alt="">
-        </div>
-        <div class="box">
-          <img src="https://image.tmdb.org/t/p/w400/1J1e8Uslw8MAE7mIVFh6TU9mPt8.jpg" alt="">
-        </div>
-        <div class="box">
-          <img src="https://image.tmdb.org/t/p/w400/1J1e8Uslw8MAE7mIVFh6TU9mPt8.jpg" alt="">
-        </div>
-        <div class="box">
-          <img src="https://image.tmdb.org/t/p/w400/1J1e8Uslw8MAE7mIVFh6TU9mPt8.jpg" alt="">
-        </div>
-        <div class="box">
-          <img src="https://image.tmdb.org/t/p/w400/1J1e8Uslw8MAE7mIVFh6TU9mPt8.jpg" alt="">
-        </div>
-        <div class="box">
-          <img src="https://image.tmdb.org/t/p/w400/1J1e8Uslw8MAE7mIVFh6TU9mPt8.jpg" alt="">
-        </div>
-        
+
       </main>
       <!-- /main -->
     </div>
