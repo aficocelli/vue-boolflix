@@ -28,10 +28,10 @@
       <!-- header -->
       <header>
         <div class="logo">
-          <h1>boolflix</h1>
+          <img src="img/logo.png" alt="">
         </div>
         <div class="search">
-          <input type="text" v-model="movieInput" v-on:keyup.enter="searchMovie">
+          <input type="text" v-model="movieInput" v-on:keyup.enter="searchMovie" placeholder="Search">
           <button @click="searchMovie"><i class="fas fa-search"></i></button>
         </div>
       </header>

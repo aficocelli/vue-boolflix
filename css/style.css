@@ -11,7 +11,7 @@ header{
   display:flex;
   justify-content: space-between;
   align-items: center;
-  padding:20px;
+  padding:10px;
   background-color: #000;
   height:10vh;
 }
@@ -32,22 +32,52 @@ main{
 /* /MIX */
 
 /* logo layout */
-.logo h1{
-  color:red;
-  text-transform: uppercase;
+.logo {
+  height:100%;
+}
+.logo img{
+  height:100%;
 }
 /* /logo layout */
+
+/* input + button layout */
+.search{
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.search input, .search button{
+  border-radius:5px;
+  height:60%;
+  border:none;
+}
+.search button{
+  margin-left:10px;
+  width:50px;
+}
+.search input{
+  padding:10px;
+}
+.search input:focus, .search button:focus{
+  outline:none;
+}
+/* /input + button layout */
+
+/* card layout */
 .box{
   height:400px;
   width:calc((100% / 5) - 20px);
   margin: 10px;
   border:2px solid #fff;
 }
-
+/* img */
 .box img{
   height:100%;
   width:100%;
 }
+/* /img */
+
+/* text */
 .movie-info{
   background-color: #000;
   color:#fff;
@@ -61,3 +91,6 @@ main{
 .movie-info p{
   font-size:14px;
 }
+/* /text */
+
+/* /card layout */
