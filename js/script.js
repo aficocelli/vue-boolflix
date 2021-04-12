@@ -6,7 +6,7 @@ var app = new Vue ({
     movies: [],
     movieInput: "",
     indexOf: null,
-
+  
   },
 
   methods: {
@@ -39,7 +39,7 @@ var app = new Vue ({
 
         myThis.movies = response.data.results;
 
-      
+
 
       })
 
