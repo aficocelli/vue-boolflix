@@ -39,10 +39,7 @@ var app = new Vue ({
 
         myThis.movies = response.data.results;
 
-        // for(var i = 0; i < myThis.movies.length; i++){
-        //
-        //
-        // }
+      
 
       })
 

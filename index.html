@@ -42,9 +42,9 @@
         <div class="box" v-for="(movie, i) in movies" @mouseover="overlay(i)" @mouseleave="resetOverlay">
           <img :src="movie.poster_path != null ? 'https://image.tmdb.org/t/p/w500/' + movie.poster_path : 'img/noposter.png'" alt="" :class="movie.id == indexOf? 'invisible': 'active'">
           <div :class="movie.id == indexOf? 'movie-info active': 'invisible'">
-            <h2><span>Titolo: </span>{{movie.title}}</h2>
-            <h3><span>Titolo originale: </span>{{movie.original_title}}</h3>
-            <p><span>Lingua originale: </span></p>
+            <h2><span>Titolo: </span>{{movie.title}}<h2 v-if="movie.title != '' ">{{movie.name}}</h2></h2>
+            <h3><span>Titolo originale: </span>{{movie.original_title}}<h3 v-if="movie.original_title != '' ">{{movie.original_name}} </h3></h3>
+            <p><span>Lingua originale: </span> <img class ="flag" :src="'img/' + movie.original_language + '.png'" :alt="movie.original_language"></p>
             <h4><span>Voto: </span><i class="fas fa-star colored-star" v-for="(n, index) in (parseInt(movie.vote_average / 2))"></i><i class="fas fa-star" v-for="(n,index) in ( 5 -(parseInt(movie.vote_average / 2)))"></i></h4>
             <p><span>Trama: </span>{{movie.overview}}</p>
           </div>

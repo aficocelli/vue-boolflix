@@ -104,6 +104,12 @@ main{
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+.movie-info .flag{
+  height:20px;
+  width:20px;
+  vertical-align: middle;
+  margin-left:10px;
+}
 /* /text */
 
 /* /card layout */
