@@ -22,7 +22,7 @@ var app = new Vue ({
 
       let myThis = this;
 
-      axios.get('https://api.themoviedb.org/3/search/movie', {
+      axios.get('https://api.themoviedb.org/3/search/multi', {
 
         params: {
 

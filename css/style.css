@@ -97,7 +97,7 @@ main{
 .movie-info span{
   color:red;
 }
-.movie-info p{
+.movie-info p:last-of-type{
   font-size:14px;
   display: -webkit-box;
   -webkit-line-clamp: 12;
