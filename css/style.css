@@ -104,12 +104,15 @@ main{
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+/* flag */
 .movie-info .flag{
   height:20px;
   width:20px;
   vertical-align: middle;
   margin-left:10px;
 }
+/* /flag */
+
 /* /text */
 
 /* /card layout */
