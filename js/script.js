@@ -4,10 +4,12 @@ var app = new Vue ({
 
   data:{
     movies: [],
+    series:[],
     movieInput: "",
     indexOf: null,
     apiKey: '5c71d6d9a1c9e5778b11fdc5540b3ed2',
     urlAxios: 'https://api.themoviedb.org/3/search/',
+    lang: 'it-IT'
 
   },
 
@@ -30,7 +32,7 @@ var app = new Vue ({
 
           api_key: myThis.apiKey,
           query: myThis.movieInput,
-          language: 'it-IT'
+          language: myThis.lang
 
         }
 
@@ -51,7 +53,7 @@ var app = new Vue ({
 
           api_key: myThis.apiKey,
           query: myThis.movieInput,
-          language: 'it-IT'
+          language: myThis.lang
 
         }
 
@@ -60,7 +62,13 @@ var app = new Vue ({
 
 
 
-        myThis.movies = response.data.results;
+        myThis.series = response.data.results;
+
+        myThis.series.forEach(element => {
+
+          myThis.movies.push(element);
+
+        });
 
 
 
