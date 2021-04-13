@@ -7,13 +7,16 @@ var app = new Vue ({
     movies: [],
     series:[],
     bestMovies:[],
+    randomMovie:[],
     movieInput: "",
     indexOf: null,
     apiKey: '5c71d6d9a1c9e5778b11fdc5540b3ed2',
     urlAxios: 'https://api.themoviedb.org/3/search/',
     lang: 'it-IT',
     startValue: true,
-    userValue: false
+    userValue: false,
+    rightMovie: 0,
+
   },
   // data end
 
@@ -53,6 +56,25 @@ var app = new Vue ({
 
     // overlay movie card end
 
+    // movies scroll
+    rightScroll: function(){
+
+      this.bestMovies = [];
+
+      for(this.rightMovie; this.bestMovies.length < 5; this.rightMovie++){
+
+        this.bestMovies.splice(this.rightMovie, 1 , this.randomMovie[this.rightMovie + 5]);
+
+      }
+
+      return this.bestMovies;
+
+    },
+    leftScroll: function(){
+
+      alert("ciao")
+
+    },
     // api movie search
     searchMovie: function(){
 
@@ -106,6 +128,7 @@ var app = new Vue ({
   },
   // methods end
   mounted: function () {
+
     let selfThis = this;
 
     axios.get(selfThis.urlAxios + 'multi', {
@@ -113,7 +136,7 @@ var app = new Vue ({
       params: {
 
         api_key: selfThis.apiKey,
-        query: 'titanic',
+        query: 'movie',
         language: selfThis.lang
 
       }
@@ -121,7 +144,14 @@ var app = new Vue ({
     })
     .then(function(response){
 
-      selfThis.bestMovies = response.data.results;
+      selfThis.randomMovie = response.data.results;
+
+      for(var i = 0; i < 5; i++){
+
+        selfThis.bestMovies.push(selfThis.randomMovie[i]);
+
+      }
+
 
 
     });

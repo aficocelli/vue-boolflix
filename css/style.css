@@ -178,5 +178,28 @@ main{
 .most-wanted{
   display:flex;
   flex-wrap:wrap;
+  align-items: center;
+  position:relative;
+  overflow-x: hidden;
 }
-/* most wanted */
+
+/* arrow button */
+.right-arrow, .left-arrow{
+  position:absolute;
+  top:50%;
+  transform: translateY(-50%);
+  height:50px;
+  width:50px;
+  border-radius:50%;
+  background-color: #636363ab;
+  font-size:24px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  color:#fff;
+}
+.right-arrow{
+  right:0;
+}
+/* /arrow button */
+/* /most wanted */

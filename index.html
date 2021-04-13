@@ -46,6 +46,12 @@
       <main>
         <!-- most wanted -->
           <div class="most-wanted">
+            <div class="right-arrow" @click="rightScroll">
+              <i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="left-arrow" @click="leftScroll">
+              <i class="fas fa-chevron-left"></i>
+            </div>
             <!-- box movie -->
             <div class="box" v-for="(item, j) in bestMovies" @mouseover="overlayMost(j)" @mouseleave="resetOverlayMost">
               <!-- poster movie -->
