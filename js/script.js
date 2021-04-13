@@ -40,6 +40,17 @@ var app = new Vue ({
     resetOverlay:function(){
       return this.indexOf = null;
     },
+
+    overlayMost: function(j) {
+
+      return this.indexOf = this.bestMovies[j].id;
+
+    },
+
+    resetOverlayMost:function(){
+      return this.indexOf = null;
+    },
+
     // overlay movie card end
 
     // api movie search

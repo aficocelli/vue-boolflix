@@ -47,13 +47,13 @@
         <!-- most wanted -->
           <div class="most-wanted">
             <!-- box movie -->
-            <div class="box" v-for="(item, i) in bestMovies" @mouseover="overlay(i)" @mouseleave="resetOverlay">
+            <div class="box" v-for="(item, j) in bestMovies" @mouseover="overlayMost(j)" @mouseleave="resetOverlayMost">
               <!-- poster movie -->
               <img :src="item.poster_path != null ? 'https://image.tmdb.org/t/p/w500/' + item.poster_path : 'img/noposter.png'" alt="" :class="item.id == indexOf? 'invisible': 'active'">
               <!-- /poster movie -->
 
               <!-- movie info -->
-              <div :class="item.id == indexOf? 'item-info active': 'invisible'">
+              <div :class="item.id == indexOf? 'movie-info active': 'invisible'">
                 <h2><span>Titolo: </span>{{item.title}}<h2 v-if="item.title != '' ">{{item.name}}</h2></h2>
                 <h3><span>Titolo originale: </span>{{item.original_title}}<h3 v-if="item.original_title != '' ">{{item.original_name}} </h3></h3>
                 <p><span>Lingua originale: </span> <span v-if=" item.original_language == 'en'? item.original_language = 'gb' : item.original_language == 'ja'? item.original_language = 'jp' : item.original_language"></span> <img class="flag" :src="'https://www.countryflags.io/' + item.original_language + '/flat/64.png'" :alt="item.original_language"></p>
