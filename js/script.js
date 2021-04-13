@@ -156,7 +156,7 @@ var app = new Vue ({
     reloadMovies: function(){
 
       this.movies = [];
-
+      this.bestMovies = [];
       let newThis = this;
       newThis.randomIndex = Math.floor(Math.random() * (newThis.indexKeyword));
       axios.get(newThis.urlAxios + 'movie', {
