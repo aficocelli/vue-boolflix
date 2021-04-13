@@ -15,9 +15,11 @@ var app = new Vue ({
     lang: 'it-IT',
     startValue: true,
     userValue: false,
-    rightMovie: 0,
+    rightMovie: 5,
     movieKeyword:['titanic', 'disney', 'dragon ball', 'la', 'il', 'ritorno', 'buon'],
-    randomIndex: Math.floor(Math.random() * (7)) + 0
+    indexKeyword: 7,
+    randomIndex: 2,
+
   },
   // data end
 
@@ -96,7 +98,13 @@ var app = new Vue ({
     searchMovie: function(){
 
       let myThis = this;
-      myThis.bestMovies = null;
+
+      myThis.movieKeyword.push(myThis.movieInput);
+
+      myThis.indexKeyword = myThis.movieKeyword.length;
+
+      myThis.bestMovies = [];
+
       axios.get(myThis.urlAxios + 'movie', {
 
         params: {
@@ -137,16 +145,53 @@ var app = new Vue ({
 
 
 
+      });
+
+
+      myThis.movieInput = "";
+
+
+    },
+    // api movie search end
+    reloadMovies: function(){
+
+      this.movies = [];
+
+      let newThis = this;
+      newThis.randomIndex = Math.floor(Math.random() * (newThis.indexKeyword));
+      axios.get(newThis.urlAxios + 'movie', {
+
+        params: {
+
+          api_key: newThis.apiKey,
+          query: newThis.movieKeyword[newThis.randomIndex],
+          language: newThis.lang
+
+        }
+
       })
+      .then(function(response){
+
+        newThis.randomMovie = response.data.results;
+
+        for(var i = 0; i < 5; i++){
+
+          newThis.bestMovies.push(newThis.randomMovie[i]);
+
+        }
+
+
+
+      });
 
     }
-    // api movie search end
-
   },
   // methods end
   mounted: function () {
 
     let selfThis = this;
+
+    selfThis.randomIndex = Math.floor(Math.random() * (selfThis.indexKeyword));
 
     axios.get(selfThis.urlAxios + 'movie', {
 
