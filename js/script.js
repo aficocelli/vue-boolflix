@@ -9,11 +9,21 @@ var app = new Vue ({
     indexOf: null,
     apiKey: '5c71d6d9a1c9e5778b11fdc5540b3ed2',
     urlAxios: 'https://api.themoviedb.org/3/search/',
-    lang: 'it-IT'
-
+    lang: 'it-IT',
+    startValue: true,
+    userValue: false
   },
 
   methods: {
+    startPage: function(){
+      return this.startValue = false;
+    },
+    userEffect: function(){
+      return this.userValue = true;
+    },
+    resetUserEffect: function(){
+      return this.userValue = false;
+    },
     overlay: function(i) {
 
       return this.indexOf = this.movies[i].id;

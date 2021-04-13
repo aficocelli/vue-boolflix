@@ -63,8 +63,29 @@
         <!-- /box movie -->
       </main>
       <!-- /main -->
+      <!-- welcome page -->
+      <div class="welcome-page" v-show="startValue">
+
+        <!-- user card -->
+        <div class="user-card">
+
+          <!-- user image -->
+          <div class="user" @click="startPage" @mouseover="userEffect" @mouseleave="resetUserEffect">
+            <div class="user-effect" v-show="userValue"></div>
+          </div>
+          <!-- /user image -->
+
+          <!-- user name -->
+          <p>User</p>
+          <!-- user name -->
+        </div>
+        <!-- /user card -->
+      </div>
+      <!-- /welcome page -->
+
     </div>
     <!-- /main container -->
+
 
     <!-- js -->
     <script src="js/script.js" charset="utf-8"></script>
