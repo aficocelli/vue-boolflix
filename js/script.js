@@ -27,7 +27,7 @@ var app = new Vue ({
   methods: {
     // welcome page
     startPage: function(){
-      
+
       return this.startValue = false;
     },
     userEffect: function(){
@@ -189,7 +189,7 @@ var app = new Vue ({
 
       });
 
-    }
+    },
     // logo click end
   },
   // methods end
