@@ -17,7 +17,7 @@ header{
 }
 main{
   height:90vh;
-  background-color: #828282;
+  background-color: #272626;
   padding:20px;
   display:flex;
   flex-wrap:wrap;
@@ -201,6 +201,13 @@ main{
   justify-content: center;
   align-items: center;
   color:#fff;
+}
+.most-wanted .category{
+  position:absolute;
+  top: 20px;
+  left: 10px;
+  color:#fff;
+  font-size:24px;
 }
 .right-arrow{
   right:0;
