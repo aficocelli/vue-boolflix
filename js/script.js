@@ -27,6 +27,7 @@ var app = new Vue ({
   methods: {
     // welcome page
     startPage: function(){
+      
       return this.startValue = false;
     },
     userEffect: function(){
@@ -94,6 +95,8 @@ var app = new Vue ({
       return this.bestMovies;
 
     },
+    // movie scroll end
+
     // api movie search
     searchMovie: function(){
 
@@ -153,6 +156,8 @@ var app = new Vue ({
 
     },
     // api movie search end
+
+    // logo click
     reloadMovies: function(){
 
       this.movies = [];
@@ -185,8 +190,11 @@ var app = new Vue ({
       });
 
     }
+    // logo click end
   },
   // methods end
+
+  // mounted
   mounted: function () {
 
     let selfThis = this;
@@ -218,5 +226,9 @@ var app = new Vue ({
 
     });
 
+
+
+
   }
+  // mounted end
 });

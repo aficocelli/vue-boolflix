@@ -106,7 +106,7 @@ main{
 .movie-info p:last-of-type{
   font-size:14px;
   display: -webkit-box;
-  -webkit-line-clamp: 12;
+  -webkit-line-clamp: 6;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -165,7 +165,8 @@ main{
 /* user card layout */
 .welcome-page p{
   color:#fff;
-  font-size:24px;
+  font-size:28px;
+  margin:10px;
 }
 
 .fade-enter-active, .fade-leave-active {
