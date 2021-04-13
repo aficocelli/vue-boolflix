@@ -132,6 +132,7 @@ main{
   justify-content: center;
   align-items: center;
 }
+/* user card layout */
 .user-card{
   display:flex;
   flex-direction:column;
@@ -158,6 +159,7 @@ main{
   border-radius:5px;
   position:relative;
 }
+/* user card layout */
 .welcome-page p{
   color:#fff;
   font-size:24px;
@@ -171,3 +173,10 @@ main{
   opacity: 0;
 }
 /* /welcome page layout */
+
+/* most wanted */
+.most-wanted{
+  display:flex;
+  flex-wrap:wrap;
+}
+/* most wanted */

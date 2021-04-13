@@ -44,6 +44,28 @@
 
       <!-- main -->
       <main>
+        <!-- most wanted -->
+          <div class="most-wanted">
+            <!-- box movie -->
+            <div class="box" v-for="(item, i) in bestMovies" @mouseover="overlay(i)" @mouseleave="resetOverlay">
+              <!-- poster movie -->
+              <img :src="item.poster_path != null ? 'https://image.tmdb.org/t/p/w500/' + item.poster_path : 'img/noposter.png'" alt="" :class="item.id == indexOf? 'invisible': 'active'">
+              <!-- /poster movie -->
+
+              <!-- movie info -->
+              <div :class="item.id == indexOf? 'item-info active': 'invisible'">
+                <h2><span>Titolo: </span>{{item.title}}<h2 v-if="item.title != '' ">{{item.name}}</h2></h2>
+                <h3><span>Titolo originale: </span>{{item.original_title}}<h3 v-if="item.original_title != '' ">{{item.original_name}} </h3></h3>
+                <p><span>Lingua originale: </span> <span v-if=" item.original_language == 'en'? item.original_language = 'gb' : item.original_language == 'ja'? item.original_language = 'jp' : item.original_language"></span> <img class="flag" :src="'https://www.countryflags.io/' + item.original_language + '/flat/64.png'" :alt="item.original_language"></p>
+                <h4><span>Voto: </span><i class="fas fa-star colored-star" v-for="(n, index) in (Math.round(item.vote_average / 2))"></i><i class="fas fa-star" v-for="(n,index) in ( 5 -(Math.round(item.vote_average / 2)))"></i></h4>
+                <p><span>Trama: </span>{{item.overview}}</p>
+              </div>
+              <!-- /movie info -->
+            </div>
+            <!-- /box movie -->
+          </div>
+        <!-- /most wanted -->
+
         <!-- box movie -->
         <div class="box" v-for="(movie, i) in movies" @mouseover="overlay(i)" @mouseleave="resetOverlay">
           <!-- poster movie -->
@@ -63,6 +85,7 @@
         <!-- /box movie -->
       </main>
       <!-- /main -->
+      <!-- transition effect -->
       <transition name="fade">
         <!-- welcome page -->
         <div class="welcome-page" v-show="startValue">
@@ -84,7 +107,7 @@
         </div>
         <!-- /welcome page -->
       </transition>
-
+      <!-- transition effect -->
     </div>
     <!-- /main container -->
 
