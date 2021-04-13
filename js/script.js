@@ -16,7 +16,7 @@ var app = new Vue ({
     startValue: true,
     userValue: false,
     rightMovie: 5,
-    movieKeyword:['titanic', 'disney', 'dragon ball', 'la', 'il', 'ritorno', 'buon'],
+    movieKeyword:['titanic', 'fight', 'dragon', 'sleepers', 'forrest', 'ritorno', 'blow'],
     indexKeyword: 7,
     randomIndex: 2,
 
