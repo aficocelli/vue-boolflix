@@ -16,7 +16,8 @@ var app = new Vue ({
     startValue: true,
     userValue: false,
     rightMovie: 0,
-
+    movieKeyword:['titanic', 'disney', 'dragon ball', 'la', 'il', 'ritorno', 'buon'],
+    randomIndex: Math.floor(Math.random() * (7)) + 0
   },
   // data end
 
@@ -63,8 +64,12 @@ var app = new Vue ({
 
       for(this.rightMovie; this.bestMovies.length < 5; this.rightMovie++){
 
-        this.bestMovies.splice(this.rightMovie, 1 , this.randomMovie[this.rightMovie + 5]);
+        this.bestMovies.splice(this.rightMovie, 1 , this.randomMovie[this.rightMovie]);
 
+      }
+      if (this.rightMovie == this.randomMovie.length){
+
+        this.rightMovie = 0;
       }
 
       return this.bestMovies;
@@ -72,7 +77,19 @@ var app = new Vue ({
     },
     leftScroll: function(){
 
-      alert("ciao")
+      this.bestMovies = [];
+
+      for(this.rightMovie; this.bestMovies.length < 5; this.rightMovie++){
+
+        this.bestMovies.splice(this.rightMovie, 1 , this.randomMovie[this.rightMovie]);
+
+      }
+      if (this.rightMovie == this.randomMovie.length){
+
+        this.rightMovie = 0;
+      }
+
+      return this.bestMovies;
 
     },
     // api movie search
@@ -131,12 +148,12 @@ var app = new Vue ({
 
     let selfThis = this;
 
-    axios.get(selfThis.urlAxios + 'multi', {
+    axios.get(selfThis.urlAxios + 'movie', {
 
       params: {
 
         api_key: selfThis.apiKey,
-        query: 'movie',
+        query: selfThis.movieKeyword[selfThis.randomIndex],
         language: selfThis.lang
 
       }

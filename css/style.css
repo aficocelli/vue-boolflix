@@ -60,7 +60,10 @@ main{
 .search button{
   margin-left:10px;
   width:50px;
+  background-color: red;
+  color: white;
 }
+
 .search input{
   padding:10px;
 }
