@@ -10,6 +10,7 @@ var app = new Vue ({
     randomMovie:[],
     movieInput: "",
     indexOf: null,
+    flags:['it', 'en', 'jp'],
     apiKey: '5c71d6d9a1c9e5778b11fdc5540b3ed2',
     urlAxios: 'https://api.themoviedb.org/3/search/',
     lang: 'it-IT',
