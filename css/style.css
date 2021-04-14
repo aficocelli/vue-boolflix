@@ -44,7 +44,6 @@ main{
 }
 .logo img{
   height:100%;
-  width:100%;
 }
 /* /logo layout */
 
@@ -238,6 +237,21 @@ main{
   color: #fff;
 }
 /* /no results page */
+
+/* dynamic star */
+.star{
+  --percent: calc(var(--rating)/2 / 5 * 100%);
+  display: inline-block;
+  font-size: 45px;
+}
+.star::before {
+  content: '★★★★★';
+  letter-spacing: 3px;
+  background: linear-gradient(90deg, #fc0 var(--percent), #fff var(--percent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+/* responsive */
 
 @media screen and (min-width: 2000px){
 

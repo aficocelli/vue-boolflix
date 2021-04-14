@@ -72,7 +72,7 @@
                 <h2><span>Titolo: </span>{{item.title}}<h2 v-if="item.title != '' ">{{item.name}}</h2></h2>
                 <h3><span>Titolo originale: </span>{{item.original_title}}<h3 v-if="item.original_title != '' ">{{item.original_name}} </h3></h3>
                 <p><span>Lingua originale: <img v-if="flags.includes(item.original_language)" class="flag" :src="'img/' + item.original_language + '.png'" :alt="item.original_language"><span class="lang-name" v-show="!flags.includes(item.original_language)">{{item.original_language}}</span> </p>
-                <h4><span>Voto: </span><i class="fas fa-star colored-star" v-for="(n, index) in (Math.round(item.vote_average / 2))"></i><i class="fas fa-star" v-for="(n,index) in ( 5 -(Math.round(item.vote_average / 2)))"></i></h4>
+                <h4><span>Voto: </span><div class="star" :style="'--rating:' + item.vote_average + ';'"></div></h4>
                 <p><span>Trama: </span>{{item.overview}}</p>
               </div>
               <!-- /movie info -->

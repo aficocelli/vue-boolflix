@@ -55,7 +55,7 @@ var app = new Vue ({
 
     overlayMost: function(j) {
 
-      return this.indexOf = j;
+      this.indexOf = j;
 
     },
 
