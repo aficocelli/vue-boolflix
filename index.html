@@ -44,6 +44,14 @@
 
       <!-- main -->
       <main>
+        <!-- no-results page -->
+        <div class="no-results">
+
+          <p v-if="movies == '' && series == '' && randomMovie == ''">No results</p>
+
+        </div>
+        <!-- /no-results page -->
+
         <!-- most wanted -->
           <div class="most-wanted">
             <p class="category">Ultime ricerche</p>
@@ -101,7 +109,7 @@
           <div class="user-card">
 
             <!-- user image -->
-            <div class="user" @click="startPage" @mouseover="userEffect" @mouseleave="resetUserEffect">
+            <div class="user" @click="startPage('audio/jingle.mp3')" @mouseover="userEffect" @mouseleave="resetUserEffect">
               <div class="user-effect" v-show="userValue"></div>
             </div>
             <!-- /user image -->

@@ -17,7 +17,7 @@ var app = new Vue ({
     userValue: false,
     sliceIndex: 5,
     sliceIndexMin: 0,
-    movieKeyword:['titanic', 'fight', 'dragon', 'sleepers', 'forrest', 'ritorno', 'blow'],
+    movieKeyword:['titanic', 'fight', 'dragon', 'sleepers', 'trainspotting', 'ritorno', 'blow'],
     indexKeyword: 7,
     randomIndex: 2,
 
@@ -27,7 +27,11 @@ var app = new Vue ({
   // methods
   methods: {
     // welcome page
-    startPage: function(){
+    startPage: function(sound){
+
+      let audio = new Audio(sound);
+
+      audio.play();
 
       return this.startValue = false;
     },
@@ -161,7 +165,7 @@ var app = new Vue ({
       this.sliceIndexMin = 0;
       let newThis = this;
       newThis.randomIndex = Math.floor(Math.random() * (newThis.indexKeyword));
-      axios.get(newThis.urlAxios + 'movie', {
+      axios.get(newThis.urlAxios + 'multi', {
 
         params: {
 
