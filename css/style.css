@@ -242,7 +242,7 @@ main{
 .star{
   --percent: calc(var(--rating)/2 / 5 * 100%);
   display: inline-block;
-  font-size: 45px;
+  font-size: 28px;
 }
 .star::before {
   content: '★★★★★';
