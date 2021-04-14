@@ -103,7 +103,11 @@ var app = new Vue ({
 
       let myThis = this;
 
-      myThis.movieKeyword.push(myThis.movieInput);
+      if(myThis.movieInput != ""){
+
+        myThis.movieKeyword.push(myThis.movieInput);
+
+      };
 
       myThis.indexKeyword = myThis.movieKeyword.length;
 
