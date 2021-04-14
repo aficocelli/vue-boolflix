@@ -54,7 +54,7 @@
               <i class="fas fa-chevron-left"></i>
             </div>
             <!-- box movie -->
-            <div class="box" v-for="(item, j) in randomMovie.slice(sliceIndexMin, sliceIndex)" @mouseover="overlayMost(j)" @mouseleave="resetOverlayMost">
+            <div class="box" v-for="(item) in randomMovie.slice(sliceIndexMin, sliceIndex)" @mouseover="overlayMost(item.id)" @mouseleave="resetOverlayMost" :key="item.id">
               <!-- poster movie -->
               <img :src="item.poster_path != null ? 'https://image.tmdb.org/t/p/w500/' + item.poster_path : 'img/noposter.png'" alt="" :class="item.id == indexOf? 'invisible': 'active'">
               <!-- /poster movie -->
@@ -74,7 +74,7 @@
         <!-- /most wanted -->
 
         <!-- box movie -->
-        <div class="box" v-for="(movie, i) in movies" @mouseover="overlay(i)" @mouseleave="resetOverlay">
+        <div class="box" v-for="(movie) in movies" @mouseover="overlay(movie.id)" @mouseleave="resetOverlay" :key="movie.id">
           <!-- poster movie -->
           <img :src="movie.poster_path != null ? 'https://image.tmdb.org/t/p/w500/' + movie.poster_path : 'img/noposter.png'" alt="" :class="movie.id == indexOf? 'invisible': 'active'">
           <!-- /poster movie -->

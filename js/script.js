@@ -6,7 +6,6 @@ var app = new Vue ({
   data:{
     movies: [],
     series:[],
-    // bestMovies:[],
     randomMovie:[],
     movieInput: "",
     indexOf: null,
@@ -43,7 +42,7 @@ var app = new Vue ({
     // overlay movie card
     overlay: function(i) {
 
-      return this.indexOf = this.movies[i].id;
+      return this.indexOf = i;
 
     },
     resetOverlay:function(){
@@ -52,7 +51,7 @@ var app = new Vue ({
 
     overlayMost: function(j) {
 
-      return this.indexOf = this.randomMovie[j].id;
+      return this.indexOf = j;
 
     },
 
@@ -86,7 +85,7 @@ var app = new Vue ({
         this.sliceIndexMin = this.randomMovie.length - 5;
 
       }
-    
+
     },
     // movie scroll end
 
@@ -103,7 +102,7 @@ var app = new Vue ({
 
       myThis.indexKeyword = myThis.movieKeyword.length;
 
-      myThis.bestMovies = [];
+      myThis.randomMovie = [];
 
       axios.get(myThis.urlAxios + 'movie', {
 
