@@ -44,6 +44,7 @@ main{
 }
 .logo img{
   height:100%;
+  width:100%;
 }
 /* /logo layout */
 
@@ -237,3 +238,15 @@ main{
   color: #fff;
 }
 /* /no results page */
+
+@media screen and (min-width: 2000px){
+
+  .box{
+    height:700px;
+  }
+  .movie-info h2, .movie-info h3,
+  .movie-info h4 .movie-info p, .movie-info span, .movie-info p:last-of-type{
+    font-size:32px;
+  }
+
+}
