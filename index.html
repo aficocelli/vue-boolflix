@@ -45,15 +45,15 @@
       <!-- main -->
       <main>
         <!-- no-results page -->
-        <div class="no-results">
+        <div class="no-results"  v-if="movies == '' && series == '' && randomMovie == ''">
 
-          <p v-if="movies == '' && series == '' && randomMovie == ''">No results</p>
+          <p>No results</p>
 
         </div>
         <!-- /no-results page -->
 
         <!-- most wanted -->
-          <div class="most-wanted">
+          <div class="most-wanted" v-if=" movies == '' ">
             <p class="category">Ultime ricerche</p>
             <div class="right-arrow" @click="rightScroll" v-if="randomMovie.length >= 5">
               <i class="fas fa-chevron-right"></i>
@@ -74,6 +74,7 @@
                 <p><span>Lingua originale: <img v-if="flags.includes(item.original_language)" class="flag" :src="'img/' + item.original_language + '.png'" :alt="item.original_language"><span class="lang-name" v-show="!flags.includes(item.original_language)">{{item.original_language}}</span> </p>
                 <h4><span>Voto: </span><div class="star" :style="'--rating:' + item.vote_average + ';'"></div></h4>
                 <p><span>Trama: </span>{{item.overview}}</p>
+
               </div>
               <!-- /movie info -->
             </div>
@@ -82,7 +83,7 @@
         <!-- /most wanted -->
 
         <!-- box movie -->
-        <div class="box" v-for="(movie) in movies" @mouseover="overlay(movie.id)" @mouseleave="resetOverlay" :key="movie.id">
+        <div class="box" v-for="(movie) in movies" @mouseover="overlayMost(movie.id)" @mouseleave="resetOverlayMost()" :key="movie.id">
           <!-- poster movie -->
           <img :src="movie.poster_path != null ? 'https://image.tmdb.org/t/p/w500/' + movie.poster_path : 'img/noposter.png'" alt="" :class="movie.id == indexOf? 'invisible': 'active'">
           <!-- /poster movie -->
@@ -92,7 +93,7 @@
             <h2><span>Titolo: </span>{{movie.title}}<h2 v-if="movie.title != '' ">{{movie.name}}</h2></h2>
             <h3><span>Titolo originale: </span>{{movie.original_title}}<h3 v-if="movie.original_title != '' ">{{movie.original_name}} </h3></h3>
             <p><span>Lingua originale: <img v-if="flags.includes(movie.original_language)" class="flag" :src="'img/' + movie.original_language + '.png'" :alt="movie.original_language"><span class="lang-name" v-show="!flags.includes(movie.original_language)">{{movie.original_language}}</span></p>
-            <h4><span>Voto: </span><i class="fas fa-star colored-star" v-for="(n, index) in (Math.round(movie.vote_average / 2))"></i><i class="fas fa-star" v-for="(n,index) in ( 5 -(Math.round(movie.vote_average / 2)))"></i></h4>
+            <h4><span>Voto: </span><div class="star" :style="'--rating:' + movie.vote_average + ';'"></div></h4>
             <p><span>Trama: </span>{{movie.overview}}</p>
           </div>
           <!-- /movie info -->

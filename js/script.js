@@ -46,11 +46,13 @@ var app = new Vue ({
     // overlay movie card
     overlay: function(i) {
 
-      return this.indexOf = i;
+      console.log(i);
+      this.indexOf = i;
 
     },
     resetOverlay:function(){
-      return this.indexOf = null;
+
+      this.indexOf = null;
     },
 
     overlayMost: function(j) {
@@ -60,7 +62,7 @@ var app = new Vue ({
     },
 
     resetOverlayMost:function(){
-      return this.indexOf = null;
+      this.indexOf = null;
     },
 
     // overlay movie card end
@@ -98,6 +100,8 @@ var app = new Vue ({
 
       let myThis = this;
 
+      this.randomMovie = [];
+
       if(myThis.movieInput != ""){
 
         myThis.movieKeyword.push(myThis.movieInput);
@@ -106,7 +110,7 @@ var app = new Vue ({
 
       myThis.indexKeyword = myThis.movieKeyword.length;
 
-      myThis.randomMovie = [];
+
 
       axios.get(myThis.urlAxios + 'movie', {
 
