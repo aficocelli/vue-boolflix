@@ -54,7 +54,7 @@
               <i class="fas fa-chevron-left"></i>
             </div>
             <!-- box movie -->
-            <div class="box" v-for="(item, j) in bestMovies" @mouseover="overlayMost(j)" @mouseleave="resetOverlayMost">
+            <div class="box" v-for="(item, j) in randomMovie.slice(sliceIndexMin, sliceIndex)" @mouseover="overlayMost(j)" @mouseleave="resetOverlayMost">
               <!-- poster movie -->
               <img :src="item.poster_path != null ? 'https://image.tmdb.org/t/p/w500/' + item.poster_path : 'img/noposter.png'" alt="" :class="item.id == indexOf? 'invisible': 'active'">
               <!-- /poster movie -->

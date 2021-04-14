@@ -6,7 +6,7 @@ var app = new Vue ({
   data:{
     movies: [],
     series:[],
-    bestMovies:[],
+    // bestMovies:[],
     randomMovie:[],
     movieInput: "",
     indexOf: null,
@@ -16,7 +16,8 @@ var app = new Vue ({
     lang: 'it-IT',
     startValue: true,
     userValue: false,
-    rightMovie: 5,
+    sliceIndex: 5,
+    sliceIndexMin: 0,
     movieKeyword:['titanic', 'fight', 'dragon', 'sleepers', 'forrest', 'ritorno', 'blow'],
     indexKeyword: 7,
     randomIndex: 2,
@@ -51,7 +52,7 @@ var app = new Vue ({
 
     overlayMost: function(j) {
 
-      return this.indexOf = this.bestMovies[j].id;
+      return this.indexOf = this.randomMovie[j].id;
 
     },
 
@@ -64,37 +65,28 @@ var app = new Vue ({
     // movies scroll
     rightScroll: function(){
 
-      this.bestMovies = [];
+      this.sliceIndex += 1;
 
-      for(this.rightMovie; this.bestMovies.length < 5; this.rightMovie++){
+      this.sliceIndexMin += 1;
 
-        this.bestMovies.splice(this.rightMovie, 1 , this.randomMovie[this.rightMovie]);
+      if(this.sliceIndex == this.randomMovie.length){
 
+        this.sliceIndex = 5;
+        this.sliceIndexMin = 0;
       }
-      if (this.rightMovie == this.randomMovie.length){
-
-        this.rightMovie = 0;
-      }
-
-      return this.bestMovies;
 
     },
     leftScroll: function(){
+      this.sliceIndex -= 1;
+      this.sliceIndexMin -= 1;
 
-      this.bestMovies = [];
+      if(this.sliceIndex == 4){
 
-      for(this.rightMovie; this.bestMovies.length < 5; this.rightMovie++){
-
-        this.bestMovies.splice(this.rightMovie, 1 , this.randomMovie[this.rightMovie]);
+        this.sliceIndex = this.randomMovie.length;
+        this.sliceIndexMin = this.randomMovie.length - 5;
 
       }
-      if (this.rightMovie == this.randomMovie.length){
-
-        this.rightMovie = 0;
-      }
-
-      return this.bestMovies;
-
+    
     },
     // movie scroll end
 
@@ -166,7 +158,7 @@ var app = new Vue ({
     reloadMovies: function(){
 
       this.movies = [];
-      this.bestMovies = [];
+
       let newThis = this;
       newThis.randomIndex = Math.floor(Math.random() * (newThis.indexKeyword));
       axios.get(newThis.urlAxios + 'movie', {
@@ -183,12 +175,6 @@ var app = new Vue ({
       .then(function(response){
 
         newThis.randomMovie = response.data.results;
-
-        for(var i = 0; i < 5; i++){
-
-          newThis.bestMovies.push(newThis.randomMovie[i]);
-
-        }
 
 
 
@@ -221,11 +207,11 @@ var app = new Vue ({
 
       selfThis.randomMovie = response.data.results;
 
-      for(var i = 0; i < 5; i++){
-
-        selfThis.bestMovies.push(selfThis.randomMovie[i]);
-
-      }
+      // for(var i = 0; i < 5; i++){
+      //
+      //   selfThis.bestMovies.push(selfThis.randomMovie[i]);
+      //
+      // }
 
 
 
