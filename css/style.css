@@ -94,6 +94,7 @@ main{
   height:100%;
   padding: 30px 20px;
   overflow: hidden;
+  position:relative;
 }
 .movie-info h3 {
   margin: 10px 0;
@@ -250,6 +251,22 @@ main{
   background: linear-gradient(90deg, #fc0 var(--percent), #fff var(--percent));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.plot{
+  background-color: black;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  overflow-y: auto;
+  padding:30px 20px;
+}
+.btn{
+  width:20px;
+  border: none;
+  border-radius: 3px;
 }
 /* responsive */
 

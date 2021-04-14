@@ -20,6 +20,7 @@ var app = new Vue ({
     movieKeyword:['titanic', 'fight', 'dragon', 'sleepers', 'trainspotting', 'ritorno', 'blow'],
     indexKeyword: 7,
     randomIndex: 2,
+    plotIndex: false
 
   },
   // data end
@@ -190,6 +191,12 @@ var app = new Vue ({
 
     },
     // logo click end
+    read: function(){
+      this.plotIndex = true;
+    },
+    resetRead:function(){
+      this.plotIndex = false;
+    }
   },
   // methods end
 

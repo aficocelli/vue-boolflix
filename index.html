@@ -74,6 +74,8 @@
                 <p><span>Lingua originale: <img v-if="flags.includes(item.original_language)" class="flag" :src="'img/' + item.original_language + '.png'" :alt="item.original_language"><span class="lang-name" v-show="!flags.includes(item.original_language)">{{item.original_language}}</span> </p>
                 <h4><span>Voto: </span><div class="star" :style="'--rating:' + item.vote_average + ';'"></div></h4>
                 <p><span>Trama: </span>{{item.overview}}</p>
+                <button class="btn" @click="read">+</button>
+                <div class="plot" v-if="plotIndex">{{item.overview}} <button class="btn" @click="resetRead">-</button></div>
 
               </div>
               <!-- /movie info -->
@@ -95,6 +97,8 @@
             <p><span>Lingua originale: <img v-if="flags.includes(movie.original_language)" class="flag" :src="'img/' + movie.original_language + '.png'" :alt="movie.original_language"><span class="lang-name" v-show="!flags.includes(movie.original_language)">{{movie.original_language}}</span></p>
             <h4><span>Voto: </span><div class="star" :style="'--rating:' + movie.vote_average + ';'"></div></h4>
             <p><span>Trama: </span>{{movie.overview}}</p>
+            <button class="btn" @click="read">+</button>
+            <div class="plot" v-if="plotIndex">{{movie.overview}} <button class="btn" @click="resetRead">-</button></div>
           </div>
           <!-- /movie info -->
         </div>
